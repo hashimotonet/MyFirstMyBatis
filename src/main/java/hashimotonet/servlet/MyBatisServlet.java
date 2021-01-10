@@ -57,6 +57,7 @@ public class MyBatisServlet extends HttpServlet {
 			out.println(output);
 
 		} catch (IOException e) {
+			e.printStackTrace();
 			log.catching(e);
 		}
 	}

@@ -122,5 +122,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
