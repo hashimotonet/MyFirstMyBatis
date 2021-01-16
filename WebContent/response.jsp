@@ -9,21 +9,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
 <title>Hello From Serverside.</title>
 </head>
 <body>
-<h1>
-<%--  for (SampleBean result : list) {
-		out.println(result.getId());
-		out.println("｜");
-		out.println(result.getName());
-		out.println("<br/>");
-		out.println("----------------------------");
-		out.println("<br/>");
-	} --%>
+<table>
+	<tr>
+		<td>Here is My Company</td>
+	</tr>
+</table>
+<hr/>
+<table>
 <c:forEach var="bean" items="${list}">
-	<c:out value="${bean.id}"/>｜
-	<c:out value="${bean.name}"/><br>
-</c:forEach></h1>
+	<tr>
+		<td>
+			<c:out value="${bean.id}"/>
+		</td>
+		<td>
+			<c:out value="${bean.name}"/>
+		</td>
+	</tr>
+</c:forEach>
+</table>
 </body>
 </html>
