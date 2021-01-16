@@ -1,7 +1,6 @@
 package hashimotonet.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import hashimotonet.action.SampleAction;
 import hashimotonet.db.SqlSessionHandler;
 
 /**
@@ -49,14 +49,14 @@ public class MyBatisServlet extends HttpServlet {
 			response.setContentType("text/html;charset=Windows-31J");
 			response.getWriter().append("Served at: ").append(request.getContextPath()).append("<br/><hr/>");
 
-			PrintWriter out = response.getWriter();
-
-			String output = getFromRepository().toString();
+			List<Map<String, Object>> output = getFromRepository();
 
 			log.info("output = " + output);
-			out.println(output);
 
-		} catch (IOException e) {
+			SampleAction action = new SampleAction();
+			action.process(request, response, getServletContext(), output);
+
+		} catch (IOException | ServletException e) {
 			log.catching(e);
 		}
 	}
