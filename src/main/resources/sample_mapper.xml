@@ -6,4 +6,9 @@
   <select id="selectTest" resultType="map">
     select * from test.test_table
   </select>
+  <select id="partialMatch" resultType="hashimotonet.bean.SampleBean">
+    select * from test.test_table
+    where 1=1
+    <if test = "name != null and name != ''" > and like CONCAT('%', #{name}, '%')</if>
+  </select>
 </mapper>

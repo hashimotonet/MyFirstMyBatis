@@ -1,0 +1,12 @@
+--検索機能設計
+
+★検索画面ビューJSPを作成する。下記をコールする。
+
+★MyBatisServlet#doPost() の実装
+
+★上記メソッドより、SqlSessionHandlerクラスの「public List<SampleBean> partialMatchByName(String name) throws IOException」をコールする。
+
+★上記メソッドは、LIKE検索を「sample_mapper.xml」よりロードし、実行する。
+
+★検索結果表示画面へフォワードする。
+

@@ -14,8 +14,8 @@
    		%mはログメッセージ
    		%nは改行
       -->
-        <Property name="logfile">./logs/mybatis.log</Property>
-        <Property name="logfile-archive">./log/testlog_%d{yyyy-MM-dd}-%i.log</Property>
+        <Property name="logfile">/temp/logs/mybatis.log</Property>
+        <Property name="logfile-archive">/temp/logs/testlog_%d{yyyy-MM-dd}-%i.log</Property>
     </Properties>
 
 	<Appenders>
